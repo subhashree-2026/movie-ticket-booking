@@ -1,0 +1,362 @@
+.seat-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px 60px;
+}
+
+.seat-page-inner {
+  display: flex;
+  gap: 40px;
+}
+
+.seat-left {
+  flex: 1;
+}
+
+.seat-right {
+  width: 320px;
+  flex-shrink: 0;
+}
+
+.seat-movie-info {
+  margin-bottom: 32px;
+}
+
+.seat-movie-info h2 {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.seat-movie-info p {
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+
+/* Screen */
+.screen-container {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.screen {
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 8px;
+  background: linear-gradient(to bottom, rgba(30, 144, 255, 0.3), transparent);
+  border-top: 3px solid var(--accent);
+  border-radius: 0 0 50% 50%;
+  color: var(--text-muted);
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* Seat grid */
+.seat-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.seat-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.row-label {
+  width: 20px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.seat {
+  width: 40px;
+  height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 6px 6px 10px 10px;
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.15s;
+  cursor: pointer;
+}
+
+.seat:hover:not(.booked):not(.selected) {
+  border-color: var(--accent);
+  background: rgba(30, 144, 255, 0.1);
+  color: var(--accent);
+}
+
+.seat.selected {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.seat.booked {
+  background: var(--bg-input);
+  border-color: transparent;
+  color: var(--text-muted);
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Legend */
+.seat-legend {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.seat-demo {
+  width: 24px;
+  height: 20px;
+  border-radius: 4px 4px 6px 6px;
+}
+
+.seat-demo.available {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+}
+
+.seat-demo.selected {
+  background: var(--accent);
+}
+
+.seat-demo.booked {
+  background: var(--bg-input);
+  opacity: 0.4;
+}
+
+/* Booking Summary */
+.booking-summary {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  position: sticky;
+  top: 94px;
+}
+
+.booking-summary h3 {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.summary-poster {
+  margin-bottom: 16px;
+}
+
+.summary-poster img {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  aspect-ratio: 2/3;
+  object-fit: cover;
+}
+
+.summary-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.summary-row span:first-child {
+  color: var(--text-muted);
+}
+
+.summary-row span:last-child {
+  color: var(--text-primary);
+  font-weight: 500;
+  text-align: right;
+  max-width: 160px;
+  word-break: break-word;
+}
+
+.summary-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 4px 0;
+}
+
+.summary-total span:last-child {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--sky);
+}
+
+.btn-book {
+  width: 100%;
+  padding: 14px;
+  background: var(--gradient-blue);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-book:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-book:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.max-note {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+
+/* Success */
+.booking-success {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+}
+
+.success-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  text-align: center;
+  max-width: 440px;
+  width: 100%;
+}
+
+.success-icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #00c853, #00e676);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: white;
+  margin: 0 auto 20px;
+}
+
+.success-card h2 {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.success-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+  text-align: left;
+}
+
+.success-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.success-row span {
+  color: var(--text-muted);
+}
+
+.success-row strong {
+  color: var(--text-primary);
+}
+
+.success-row.total strong {
+  font-size: 18px;
+  color: var(--sky);
+}
+
+.success-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-primary {
+  padding: 12px;
+  background: var(--gradient-blue);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-secondary {
+  padding: 12px;
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  border-color: var(--text-secondary);
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .seat-page-inner {
+    flex-direction: column;
+  }
+
+  .seat-right {
+    width: 100%;
+  }
+
+  .seat {
+    width: 36px;
+    height: 32px;
+    font-size: 11px;
+  }
+
+  .booking-summary {
+    position: static;
+  }
+}

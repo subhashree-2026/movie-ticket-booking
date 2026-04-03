@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(npm create:*)",
+      "Bash(npm install:*)",
+      "Bash(npx vite:*)",
+      "Bash(npm run:*)",
+      "Bash(gh auth:*)",
+      "Bash(git config:*)",
+      "Bash(where gh:*)",
+      "Bash(curl -s \"https://api.github.com/search/users?q=subhu1385+in:email\")"
+    ]
+  }
+}
